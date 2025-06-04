@@ -1,0 +1,8 @@
+*.o
+*.dylib
+*.so
+*.a
+*.lib
+*.dll
+CTFPatch
+CTFPatch.exe
