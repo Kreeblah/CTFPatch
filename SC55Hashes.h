@@ -22,8 +22,6 @@
 
 #include <stddef.h>
 
-#define SC55_NUM_HASHES 2
-
 typedef struct
 {
     const char sha256hash[64];
@@ -32,7 +30,7 @@ typedef struct
     const size_t version_address;
 } SC55Hash;
 
-static const SC55Hash SC55_HASHES[SC55_NUM_HASHES] = {
+static const SC55Hash SC55_HASHES[] = {
     {"a4c9fd821059054c7e7681d61f49ce6f42ed2fe407a7ec1ba0dfdc9722582ce0", 524288, "SC-55 mkII 1.01", 0xfff0},
     {"2e138479101452f7e331f95dd7be9232df6dda317c8fd38b6d71243c210c5e6d", 524288, "XP-10 1.02", 0x4405d}
 };

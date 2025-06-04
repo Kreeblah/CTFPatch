@@ -193,14 +193,17 @@ SC55Hash IdentifyROM(const uint8_t rom_sha256[32], const size_t rom_size)
     char rom_sha256_str[65];
     uint8_t i;
 
+    size_t sc55_num_hashes;
+
     for(i = 0; i < 32; i++)
     {
         sprintf(rom_sha256_str + (2 * i), "%02x", rom_sha256[i]);
     }
 
     rom_sha256_str[64] = 0;
+    sc55_num_hashes = sizeof(SC55_HASHES)/sizeof(SC55Hash);
 
-    for(i = 0; i < SC55_NUM_HASHES; i++)
+    for(i = 0; i < sc55_num_hashes; i++)
     {
         if(strcmp(SC55_HASHES[i].sha256hash, rom_sha256_str) == 0 && SC55_HASHES[i].file_size == rom_size)
         {
