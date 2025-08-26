@@ -20,6 +20,10 @@
 #ifndef CTF_PATCH_H
 #define CTF_PATCH_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 
 #include "SC55Hashes.h"
@@ -202,5 +206,9 @@ int WriteROM(const SC55ROMData *rom, const char *rom_file_path);
 SC55Hash IdentifyROM(const uint8_t rom_sha256[32], size_t rom_size);
 
 int PatchROM(SC55ROMData *rom, uint8_t compat_mode, uint8_t drum_compat_mode, uint8_t update_version);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* CTF_PATCH_H */
